@@ -1,1 +1,0 @@
-The kinect drivers are in this folder
