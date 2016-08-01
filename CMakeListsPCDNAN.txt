@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+
+project(pcl-pcdNaN)
+
+find_package(PCL 1.7 REQUIRED)
+
+add_executable (pcdNaN pcdNaN.cpp)
+target_link_libraries (pcdNaN ${PCL_LIBRARIES}) 
