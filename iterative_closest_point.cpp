@@ -52,6 +52,9 @@ main (int argc, char** argv)
   icp.setInputTarget(cloud_out);
   //pcl::PointCloud<pcl::PointXYZ> Final;
   pcl::PointCloud<pcl::PointXYZ>::Ptr Final (new pcl::PointCloud<pcl::PointXYZ>);
+  //Using pointer here because of the data type I defined my output point cloud as. I defined Final as such so I could display the point cloud with the PCL Visualizer object
+  //icp.align() documentation: http://docs.pointclouds.org/trunk/classpcl_1_1_registration.html#a96212303ca16b6d60020824086887c4f
+  //Note: no need for "guess" parameter
   icp.align(*Final);
   std::cout << "has converged:" << icp.hasConverged() << " score: " <<
   icp.getFitnessScore() << std::endl;
